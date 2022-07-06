@@ -1,5 +1,4 @@
 
-
     export interface Coord {
         lon: number;
         lat: number;
@@ -10,28 +9,55 @@
         name: string;
         coord: Coord;
         country: string;
+        population: number;
+        timezone: number;
     }
 
     export interface Temp {
-        average: number;
-        average_max: number;
-        average_min: number;
-        record_max: number;
-        record_min: number;
+        day: number;
+        min: number;
+        max: number;
+        night: number;
+        eve: number;
+        morn: number;
+    }
+
+    export interface FeelsLike {
+        day: number;
+        night: number;
+        eve: number;
+        morn: number;
+    }
+
+    export interface Weather {
+        id: number;
+        main: string;
+        description: string;
+        icon: string;
     }
 
     export interface List {
         dt: number;
-        humidity: number;
-        pressure: number;
+        sunrise: number;
+        sunset: number;
         temp: Temp;
-        wind_speed: number;
+        feels_like: FeelsLike;
+        pressure: number;
+        humidity: number;
+        weather: Weather[];
+        speed: number;
+        deg: number;
+        gust: number;
+        clouds: number;
+        pop: number;
     }
 
     export interface ForecastWeather {
-        cod: string;
         city: City;
+        cod: string;
         message: number;
+        cnt: number;
         list: List[];
     }
+
 

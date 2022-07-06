@@ -1,1 +1,149 @@
 /* You can add global styles to this file, and also import other style files */
+.container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 40px;
+    justify-content: center;
+  
+    .forecast-section {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 60px;
+      align-self: center;
+  
+      .form-container {
+        display: flex;
+        gap: 60px;
+        flex-wrap: wrap;
+  
+        .form {
+          display: flex;
+          justify-content: space-evenly;
+          gap: 30px;
+        }
+        .form-input {
+          display: flex;
+          justify-content: space-between;
+        }
+        .mr-10 {
+          margin-right: 10px;
+        }
+        input {
+          padding: 10px;
+          border-radius: 25px;
+          border: none;
+          background-color: #fff;
+          font-family: inherit;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          min-width: 250px;
+          font-size: 10px;
+        }
+        input:focus {
+          outline: none;
+        }
+  
+        button {
+          background: #5e5df0;
+          border-radius: 999px;
+          box-shadow: #5e5df0 0 10px 20px -10px;
+          box-sizing: border-box;
+          color: #ffffff;
+          cursor: pointer;
+          font-size: 16px;
+          font-weight: 700;
+          outline: 0 solid transparent;
+          padding: 8px 18px;
+          width: auto;
+          border: 0;
+  
+          &:focus {
+            border: 1px solid black;
+          }
+        }
+      }
+  
+      .current-weather-container {
+        background-color: #9bc1bc;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        max-width: 50%;
+  
+        &.forecast-card-layout {
+          display: flex;
+          // margin: 20px;
+  
+          .forecast-card-container {
+            margin: 10px;
+            padding: 10px;
+          }
+        }
+  
+        .current-weather-overview {
+          display: flex;
+          flex-direction: column;
+          row-gap: 40px;
+  
+          .current-weather-summary {
+            display: inline-flex;
+            flex-wrap: wrap;
+            .temp-summary-no {
+              margin-left: 8px;
+              font-size: 64px;
+              line-height: 62px;
+              align-items: center;
+              direction: ltr;
+              display: flex;
+  
+              .temp-summary-unit {
+                font-size: 34px;
+              }
+            }
+  
+            .temp-feels-like {
+              margin-left: 30px;
+              .weather-description {
+                font-size: 15px;
+                font-weight: bold;
+                padding-top: 10px;
+              }
+            }
+          }
+  
+          .current-weather-detail {
+            padding: 0 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+  
+            .current-weather-detail-item {
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              row-gap: 20px;
+              & > p:first-child {
+                font-size: 12px;
+                font-weight: normal;
+                line-height: 16px;
+                opacity: 1;
+              }
+              & > p:last-child {
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .header-info {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+   

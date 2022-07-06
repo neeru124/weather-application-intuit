@@ -81,10 +81,35 @@ export class AppComponent {
   }
 
   showWeather(noOfDays: number, city: any, zipcode: any) {
-    this.weatherDetail
-      .getWeatherData(noOfDays, city, zipcode)
-      .subscribe((response: Weather) => {
-        this.weatherData = response;
+    // this.weatherDetail
+    //   .getWeatherData(noOfDays, city, zipcode)
+    //   .subscribe((response: Weather) => {
+    //     this.weatherData = response;
+    //     console.log(this.weatherData);
+    //     if (noOfDays > 0) {
+    //       this.showCurrWeather = true;
+    //       this.showForecastWeather = true;
+    //     } else {
+    //       this.showCurrWeather = true;
+    //       this.showForecastWeather = false;
+    //     }
+    //   });
+    if(noOfDays>0){
+      this.weatherDetail
+      .getRapidForecasttWeather(city, zipcode)
+      .subscribe((response: ForecastWeather) => {
+        this.futureWeatherData = response;
+        console.log(this.weatherData);
+        if (noOfDays > 0) {
+          this.showCurrWeather = false;
+          this.showForecastWeather = true;
+        } 
+      });
+    }else {
+      this.weatherDetail
+      .getRapidCurrentWeather(city, zipcode)
+      .subscribe((response: PresentWeather ) => {
+        this.presentWeatherData = response;
         console.log(this.weatherData);
         if (noOfDays > 0) {
           this.showCurrWeather = true;
@@ -94,35 +119,7 @@ export class AppComponent {
           this.showForecastWeather = false;
         }
       });
-    // if(noOfDays>0){
-    //   this.weatherDetail
-    //   .getRapidForecasttWeather(city, zipcode)
-    //   .subscribe((response: ForecastWeather) => {
-    //     this.futureWeatherData = response;
-    //     console.log(this.weatherData);
-    //     if (noOfDays > 0) {
-    //       this.showCurrWeather = true;
-    //       this.showForecastWeather = true;
-    //     } else {
-    //       this.showCurrWeather = true;
-    //       this.showForecastWeather = false;
-    //     }
-    //   });
-    // }else {
-    //   this.weatherDetail
-    //   .getRapidCurrentWeather(city, zipcode)
-    //   .subscribe((response: PresentWeather ) => {
-    //     this.presentWeatherData = response;
-    //     console.log(this.weatherData);
-    //     if (noOfDays > 0) {
-    //       this.showCurrWeather = true;
-    //       this.showForecastWeather = true;
-    //     } else {
-    //       this.showCurrWeather = true;
-    //       this.showForecastWeather = false;
-    //     }
-    //   });
-    // }
+    }
     
   }
   updateCurrPlaceWeather() {

@@ -101,7 +101,7 @@ export class WeatherService {
     }
       this.params = this.params.set('unit', 'imperial');
 
-    return this.http.get<any>('https://community-open-weather-map.p.rapidapi.com/climate/month',{
+    return this.http.get<any>('https://community-open-weather-map.p.rapidapi.com/forecast/daily',{
         headers:this.headers,params:this.params
       });
       

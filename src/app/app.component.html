@@ -30,8 +30,12 @@
 </div>
 
 <div *ngIf="showCurrWeather">
-  <app-current-weather [weatherInfo]="weatherData" [tempUnit]="currTempMode" [windUnit]="currWindMode"></app-current-weather>
+  <!-- <app-current-weather [weatherInfo]="weatherData" [tempUnit]="currTempMode" [windUnit]="currWindMode"></app-current-weather> -->
+  <app-current-weather [presentWeatherInfo]="presentWeatherData" [tempUnit]="currTempMode" [windUnit]="currWindMode"></app-current-weather>
+
 </div>
 <div *ngIf="showForecastWeather">
-  <app-forecast-weather [weatherForecast]="weatherData" [tempUnit]="currTempMode"></app-forecast-weather>
+  <!-- <app-forecast-weather [weatherForecast]="weatherData" [tempUnit]="currTempMode"></app-forecast-weather> -->
+  <app-forecast-weather [weatherForecast]="futureWeatherData" [tempUnit]="currTempMode"></app-forecast-weather>
+  
 </div>
